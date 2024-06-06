@@ -21,3 +21,53 @@
     </video>
   </body>
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Streaming With Node</title>
+<style>
+  body {
+    margin: 5% auto;
+    max-width: 100%;
+    background-color: rgb(14, 14, 14);
+    padding-top: 10%;
+    padding-left: 35%;
+  }
+</style>
+</head>
+<body>
+<video id="videoPlayer" width="50%" controls muted="muted" autoplay>
+  <source src="/video" type="video/mp4" />
+</video>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const video = document.getElementById('videoPlayer');
+  const rangeStart = 0;
+  const rangeEnd = 100000; // จำนวนไบต์ที่ต้องการรับ
+
+  // สร้างคำร้องขอ HTTP โดยใช้ XMLHttpRequest
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', '/video');
+  xhr.setRequestHeader('Range', `bytes=${rangeStart}-${rangeEnd}`);
+  xhr.responseType = 'blob'; // เราต้องการข้อมูลเป็น blob
+
+  xhr.onload = function () {
+    if (xhr.status === 206) { // ตอบกลับเป็น 206 Partial Content
+      const blob = xhr.response;
+      video.src = URL.createObjectURL(blob);
+    }
+  };
+
+  xhr.send();
+});
+</script>
+
+</body>
+</html>
+ -->
